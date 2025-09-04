@@ -5,7 +5,7 @@ import arvindProfile from '@/assets/arvind-profile.jpg';
 
 const Portfolio = () => {
   useEffect(() => {
-    let typedInstance: any = null;
+    let typedInstance: Typed | null = null;
 
     // Initialize Typed.js with timeout to ensure DOM is ready
     const initializeTyped = () => {
