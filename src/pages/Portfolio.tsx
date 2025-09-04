@@ -552,23 +552,143 @@ const Portfolio = () => {
       {/* Skills Section */}
       <section id="skills" className="skills section-padding">
         <div className="container-max">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Skills</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Technical <span className="text-primary">Skills</span></h2>
           
-          <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
-            {[
-              'Python (Programming Language)',
-              'C++',
-              'Silicon Validation',
-              'GTK',
-              'Synopsys tools',
-              'RAS',
-              'Bug Tracking',
-              'Computer System Validation'
-            ].map((skill, index) => (
-              <span key={index} className="skill-chip">
-                {skill}
-              </span>
-            ))}
+          <div className="grid lg:grid-cols-2 gap-8">
+            
+            {/* Validation & Debugging */}
+            <div className="skills-category professional-card p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <i className="bx bx-bug-alt text-2xl text-primary"></i>
+                <h3 className="text-xl font-semibold">Validation & Debugging</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  'Pre/Post-Silicon Validation',
+                  'FPGA Validation',
+                  'RTL Debugging',
+                  'Silicon Bring-Up',
+                  'System-Level Testing',
+                  'RAS (Reliability, Availability, Serviceability)',
+                  'Error Injection (PCIe, Memory, Reset)'
+                ].map((skill, index) => (
+                  <span key={index} className="skill-chip">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Tools & Platform */}
+            <div className="skills-category professional-card p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <i className="bx bx-wrench text-2xl text-primary"></i>
+                <h3 className="text-xl font-semibold">Tools & Platform</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  'SIMICS',
+                  'BCKFS (Firmware Model)',
+                  'ITP (In-Target Probe)',
+                  'GTK',
+                  'Synopsys Visualizer',
+                  'Wireshark',
+                  'System Trace Tool',
+                  'JIRA',
+                  'VNC',
+                  'PUTTY',
+                  'WinSCP'
+                ].map((skill, index) => (
+                  <span key={index} className="skill-chip">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Programming & Automation */}
+            <div className="skills-category professional-card p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <i className="bx bx-code-alt text-2xl text-primary"></i>
+                <h3 className="text-xl font-semibold">Programming & Automation</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  'Python',
+                  'C++',
+                  'YAML Test Development',
+                  'Hexa/NGA Automation Framework'
+                ].map((skill, index) => (
+                  <span key={index} className="skill-chip">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Technologies & Protocols */}
+            <div className="skills-category professional-card p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <i className="bx bx-chip text-2xl text-primary"></i>
+                <h3 className="text-xl font-semibold">Technologies & Protocols</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  'Intel QAT (Quick Assist Technology)',
+                  'DDR4',
+                  'DDRT',
+                  'Intel Optane',
+                  'HBM',
+                  'Compression & Encryption Standards',
+                  'PCIe',
+                  'Virtualization',
+                  'UEFI/BIOS/Firmware Logs'
+                ].map((skill, index) => (
+                  <span key={index} className="skill-chip">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Operating Systems */}
+            <div className="skills-category professional-card p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <i className="bx bx-desktop text-2xl text-primary"></i>
+                <h3 className="text-xl font-semibold">Operating Systems</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  'Linux',
+                  'Windows'
+                ].map((skill, index) => (
+                  <span key={index} className="skill-chip">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Additional Skills */}
+            <div className="skills-category professional-card p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <i className="bx bx-cog text-2xl text-primary"></i>
+                <h3 className="text-xl font-semibold">Additional Skills</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  'Debug Log Analysis',
+                  'Firmware/Hardware/Software Integration',
+                  'Bug Reporting & Triage',
+                  'SVN/Git'
+                ].map((skill, index) => (
+                  <span key={index} className="skill-chip">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
