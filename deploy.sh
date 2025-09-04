@@ -102,6 +102,9 @@ case $DEPLOY_TARGET in
     "github")
         print_status "Deploying to GitHub Pages..."
         print_warning "Make sure GitHub Pages is enabled in repository settings"
+        print_status "Building for GitHub Pages with correct base path..."
+        export VITE_BASE_PATH="/arvind-validation-folio/"
+        npm run build
         print_status "Pushing changes to trigger GitHub Actions deployment..."
         git add .
         git commit -m "Deploy portfolio $(date '+%Y-%m-%d %H:%M:%S')" || true
@@ -111,6 +114,8 @@ case $DEPLOY_TARGET in
     
     "netlify")
         print_status "Deploying to Netlify..."
+        export VITE_BASE_PATH="/"
+        npm run build
         if command -v netlify &> /dev/null; then
             netlify deploy --prod --dir=dist
             print_success "Deployed to Netlify!"
@@ -122,6 +127,8 @@ case $DEPLOY_TARGET in
     
     "vercel")
         print_status "Deploying to Vercel..."
+        export VITE_BASE_PATH="/"
+        npm run build
         if command -v vercel &> /dev/null; then
             vercel --prod
             print_success "Deployed to Vercel!"
@@ -133,6 +140,8 @@ case $DEPLOY_TARGET in
     
     "preview")
         print_status "Starting local preview..."
+        export VITE_BASE_PATH="/"
+        npm run build
         npm run preview &
         PREVIEW_PID=$!
         print_success "Preview server started! Check http://localhost:4173"

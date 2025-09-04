@@ -1,6 +1,6 @@
 # Deployment Guide - Arvind Singh Portfolio
 
-This repository includes automated deployment scripts and GitHub Actions workflows for deploying Arvind Singh's portfolio website.
+This repository includes automated deployment scripts and GitHub Actions workflows for deploying Arvind Singh's portfolio website to multiple platforms.
 
 ## 🚀 Deployment Options
 
@@ -13,80 +13,138 @@ The portfolio automatically deploys to GitHub Pages when changes are pushed to t
 2. Set source to "GitHub Actions"
 3. Push changes to `main` branch
 
-**Workflow Files:**
-- `.github/workflows/deploy.yml` - Simple deployment
-- `.github/workflows/build-and-deploy.yml` - Advanced deployment with testing
+**URL:** `https://abh2050.github.io/arvind-validation-folio/`
 
-### 2. Manual Deployment Script
+### 2. Netlify
 
-Use the included `deploy.sh` script for flexible deployment options:
+For Netlify deployment, the app uses root path configuration.
 
+**Manual Deployment:**
 ```bash
-# Interactive deployment (choose target)
-./deploy.sh
-
-# Direct deployment to specific platform
-./deploy.sh github    # Deploy to GitHub Pages
-./deploy.sh netlify   # Deploy to Netlify
-./deploy.sh vercel    # Deploy to Vercel
-./deploy.sh preview   # Local preview only
+# Set environment for root path
+export VITE_BASE_PATH="/"
+npm run build
+netlify deploy --prod --dir=dist
 ```
 
-### 3. Platform-Specific Instructions
+**Or use the deployment script:**
+```bash
+./deploy.sh netlify
+```
 
-#### GitHub Pages
-1. Push changes to `main` branch
-2. GitHub Actions will automatically build and deploy
-3. Visit: `https://[username].github.io/arvind-validation-folio`
+### 3. Vercel
 
-#### Netlify
-1. Install Netlify CLI: `npm install -g netlify-cli`
-2. Run: `./deploy.sh netlify`
-3. Follow authentication prompts
+For Vercel deployment, the app uses root path configuration.
 
-#### Vercel
-1. Install Vercel CLI: `npm install -g vercel`
-2. Run: `./deploy.sh vercel`
-3. Follow setup prompts
+**Manual Deployment:**
+```bash
+# Set environment for root path
+export VITE_BASE_PATH="/"
+npm run build
+vercel --prod
+```
 
-## 📁 Build Output
+**Or use the deployment script:**
+```bash
+./deploy.sh vercel
+```
 
-- Build command: `npm run build`
-- Output directory: `dist/`
-- Preview command: `npm run preview`
+### 4. Custom Domain/Server
 
-## 🔧 Development
+For deployment to custom domains or servers:
 
 ```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
+# Build with root path
+export VITE_BASE_PATH="/"
 npm run build
 
-# Preview production build
-npm run preview
+# Deploy the contents of dist/ folder to your server
 ```
 
-## 📋 Requirements
+## 🔧 Environment Configuration
 
-- Node.js 18+
-- npm or yarn
-- Git (for GitHub deployment)
+The app automatically configures the base path based on environment variables:
 
-## 🔒 Environment Variables
+- **`VITE_BASE_PATH`**: Override the base path for assets and routing
+- **Development**: Uses `/` (root path)
+- **Production**: Uses `/arvind-validation-folio/` for GitHub Pages, or value from `VITE_BASE_PATH`
 
-No environment variables required for basic deployment. The portfolio is a static site.
+### Platform-Specific Base Paths:
 
-## 📞 Support
+| Platform | Base Path | Environment Variable |
+|----------|-----------|---------------------|
+| GitHub Pages | `/arvind-validation-folio/` | Auto-set in CI |
+| Netlify | `/` | `VITE_BASE_PATH="/"` |
+| Vercel | `/` | `VITE_BASE_PATH="/"` |
+| Custom Domain | `/` | `VITE_BASE_PATH="/"` |
 
-For deployment issues, check:
-1. GitHub Actions logs (for GitHub Pages)
-2. Build output in terminal
-3. Browser console for runtime errors
+## 📋 Build Commands
+
+### Standard Build (GitHub Pages)
+```bash
+npm run build
+```
+
+### Build for Root Domain
+```bash
+export VITE_BASE_PATH="/"
+npm run build
+```
+
+### Build for Custom Subdirectory
+```bash
+export VITE_BASE_PATH="/my-portfolio/"
+npm run build
+```
+
+## 🧪 Testing Builds Locally
+
+```bash
+# Build and preview
+export VITE_BASE_PATH="/"
+npm run build
+npm run preview
+
+# Or use deployment script
+./deploy.sh preview
+```
+
+## 🔄 Deployment Script Usage
+
+The included `deploy.sh` script handles multiple deployment scenarios:
+
+```bash
+# Interactive deployment (choose platform)
+./deploy.sh
+
+# Direct deployment
+./deploy.sh github    # GitHub Pages with correct base path
+./deploy.sh netlify   # Netlify with root path
+./deploy.sh vercel    # Vercel with root path
+./deploy.sh preview   # Local preview with root path
+```
+
+## ⚠️ Important Notes
+
+1. **Always build before deploying**: Never deploy the source code directly
+2. **Use correct base path**: Set `VITE_BASE_PATH` appropriately for your deployment target
+3. **Deploy `dist/` folder**: Only deploy the built files, not the source code
+4. **Test locally**: Use `npm run preview` to test the production build
+
+## 🐛 Troubleshooting
+
+### Blank Page Issues
+- Ensure you're deploying the `dist/` folder contents
+- Check that `VITE_BASE_PATH` matches your deployment URL structure
+- Verify assets are loading correctly in browser dev tools
+
+### 404 Errors
+- For single-page apps, configure your host for client-side routing
+- Ensure the base path in router matches the deployment path
+
+### Asset Loading Issues
+- Check that the base path is set correctly
+- Verify asset URLs in the built HTML match your deployment structure
 
 ---
 

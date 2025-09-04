@@ -36,6 +36,7 @@ jobs:
       run: npm run build
       env:
         NODE_ENV: production
+        VITE_BASE_PATH: /arvind-validation-folio/
     
     - name: Setup Pages
       if: github.ref == 'refs/heads/main'

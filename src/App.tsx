@@ -8,12 +8,22 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Get basename for different deployment environments
+const getBasename = () => {
+  // Check for environment variable first
+  const envBasename = import.meta.env.VITE_BASE_PATH;
+  if (envBasename) return envBasename;
+  
+  // Default GitHub Pages path for production, empty for development
+  return import.meta.env.PROD ? '/arvind-validation-folio' : '';
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={getBasename()}>
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
