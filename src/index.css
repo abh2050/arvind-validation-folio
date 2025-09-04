@@ -6,49 +6,49 @@
 
 @layer base {
   :root {
-    /* Core Brand Colors */
-    --background: 0 0% 100%;
-    --foreground: 220 15% 25%;
+    /* Dark Professional Theme */
+    --background: 220 25% 8%;
+    --foreground: 220 15% 95%;
 
     /* Professional Blue Palette */
-    --primary: 220 85% 45%;
-    --primary-foreground: 0 0% 100%;
-    --primary-dark: 220 85% 35%;
-    --primary-light: 220 85% 55%;
+    --primary: 220 85% 60%;
+    --primary-foreground: 220 25% 8%;
+    --primary-dark: 220 85% 50%;
+    --primary-light: 220 85% 70%;
 
-    /* Professional Grays */
-    --secondary: 220 15% 96%;
-    --secondary-foreground: 220 15% 25%;
-    --muted: 220 15% 95%;
-    --muted-foreground: 220 10% 50%;
+    /* Professional Dark Grays */
+    --secondary: 220 20% 15%;
+    --secondary-foreground: 220 15% 85%;
+    --muted: 220 20% 12%;
+    --muted-foreground: 220 10% 60%;
 
     /* Accent Colors */
-    --accent: 200 85% 50%;
-    --accent-foreground: 0 0% 100%;
-    --success: 142 76% 36%;
-    --warning: 38 92% 50%;
+    --accent: 200 85% 60%;
+    --accent-foreground: 220 25% 8%;
+    --success: 142 76% 50%;
+    --warning: 38 92% 60%;
 
     /* Card & Surface */
-    --card: 0 0% 100%;
-    --card-foreground: 220 15% 25%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 25%;
+    --card: 220 25% 10%;
+    --card-foreground: 220 15% 95%;
+    --popover: 220 25% 10%;
+    --popover-foreground: 220 15% 95%;
 
     /* Borders & Inputs */
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 220 85% 45%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 220 85% 60%;
 
     /* Interactive States */
-    --hover: 220 85% 50%;
-    --active: 220 85% 40%;
+    --hover: 220 85% 65%;
+    --active: 220 85% 55%;
 
     /* Design Tokens */
     --radius: 0.5rem;
-    --shadow-sm: 0 1px 2px 0 hsl(220 15% 25% / 0.05);
-    --shadow: 0 1px 3px 0 hsl(220 15% 25% / 0.1), 0 1px 2px 0 hsl(220 15% 25% / 0.06);
-    --shadow-md: 0 4px 6px -1px hsl(220 15% 25% / 0.1), 0 2px 4px -1px hsl(220 15% 25% / 0.06);
-    --shadow-lg: 0 10px 15px -3px hsl(220 15% 25% / 0.1), 0 4px 6px -2px hsl(220 15% 25% / 0.05);
+    --shadow-sm: 0 1px 2px 0 hsl(220 25% 5% / 0.3);
+    --shadow: 0 1px 3px 0 hsl(220 25% 5% / 0.4), 0 1px 2px 0 hsl(220 25% 5% / 0.2);
+    --shadow-md: 0 4px 6px -1px hsl(220 25% 5% / 0.4), 0 2px 4px -1px hsl(220 25% 5% / 0.2);
+    --shadow-lg: 0 10px 15px -3px hsl(220 25% 5% / 0.4), 0 4px 6px -2px hsl(220 25% 5% / 0.2);
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));

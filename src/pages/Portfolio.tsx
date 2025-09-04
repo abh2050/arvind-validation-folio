@@ -580,7 +580,7 @@ const Portfolio = () => {
       {/* Mobile Menu Styles */}
       <style>{`
         .navbar.scrolled {
-          background: rgba(255, 255, 255, 0.95);
+          background: rgba(13, 15, 20, 0.95);
           backdrop-filter: blur(10px);
           box-shadow: var(--shadow-md);
         }
@@ -595,7 +595,8 @@ const Portfolio = () => {
           top: 80px;
           left: 0;
           right: 0;
-          background: white;
+          background: rgba(13, 15, 20, 0.98);
+          backdrop-filter: blur(10px);
           flex-direction: column;
           padding: 2rem;
           box-shadow: var(--shadow-lg);
