@@ -193,7 +193,7 @@ const Portfolio = () => {
               Diligent Validation Engineer with 12+ years in system validation. Experienced across top-tier semiconductor companies. Strong background in computer architecture and SoC validation. Skilled in hardware/firmware integration and system-level debug. Master's in Electrical and Computer Engineering. Open to roles in Pre/Post-Silicon Validation.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="#" className="btn-gradient px-6 py-3 rounded-lg font-medium inline-flex items-center gap-2">
+              <a href="https://docs.google.com/document/d/1XCzdKMhpUV7E1SOaL4gwsekc_3qtmuEd/edit?usp=sharing&ouid=114586430087198779784&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" className="btn-gradient px-6 py-3 rounded-lg font-medium inline-flex items-center gap-2">
                 <i className="bx bx-download"></i>
                 Download Resume
               </a>
@@ -812,7 +812,7 @@ const Portfolio = () => {
         <div className="container-max">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex flex-wrap gap-4">
-              <a href="#" className="bg-primary-foreground text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary-light hover:text-primary-foreground transition-all inline-flex items-center gap-2">
+              <a href="https://docs.google.com/document/d/1XCzdKMhpUV7E1SOaL4gwsekc_3qtmuEd/edit?usp=sharing&ouid=114586430087198779784&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" className="bg-primary-foreground text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary-light hover:text-primary-foreground transition-all inline-flex items-center gap-2">
                 <i className="bx bx-download"></i>
                 Download Resume
               </a>
