@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Typed from 'typed.js';
 import ScrollReveal from 'scrollreveal';
-import arvindProfile from '@/assets/arvind-profile.jpg';
+import arvindProfile from '@/assets/arvind-profile.png';
 
 const Portfolio = () => {
   useEffect(() => {
