@@ -1,43 +1,65 @@
 import { useEffect } from 'react';
+import Typed from 'typed.js';
+import ScrollReveal from 'scrollreveal';
 import arvindProfile from '@/assets/arvind-profile.jpg';
-
-declare global {
-  interface Window {
-    Typed: any;
-    ScrollReveal: any;
-  }
-}
 
 const Portfolio = () => {
   useEffect(() => {
-    // Initialize Typed.js
-    if (window.Typed) {
-      new window.Typed('.multiple-text', {
-        strings: [
-          'System Validation Engineer',
-          'Pre/Post-Silicon Validation Specialist',
-          'Hardware/Firmware Integration',
-          'SoC Debug & QAT Validation'
-        ],
-        typeSpeed: 100,
-        backSpeed: 60,
-        backDelay: 1000,
-        loop: true
-      });
-    }
+    let typedInstance: any = null;
 
-    // Initialize ScrollReveal
-    if (window.ScrollReveal) {
-      const sr = window.ScrollReveal();
-      
-      sr.reveal('.home', { delay: 200, origin: 'top' });
-      sr.reveal('.about', { delay: 300, origin: 'left' });
-      sr.reveal('.experience-card', { delay: 100, origin: 'bottom', interval: 200 });
-      sr.reveal('.education', { delay: 200, origin: 'right' });
-      sr.reveal('.skill-chip', { delay: 100, origin: 'bottom', interval: 100 });
-      sr.reveal('.project-card', { delay: 150, origin: 'bottom', interval: 150 });
-      sr.reveal('.recognition-item', { delay: 100, origin: 'left', interval: 100 });
-    }
+    // Initialize Typed.js with timeout to ensure DOM is ready
+    const initializeTyped = () => {
+      const targetElement = document.querySelector('.multiple-text');
+      if (targetElement) {
+        try {
+          typedInstance = new Typed('.multiple-text', {
+            strings: [
+              'System Validation Engineer',
+              'Pre/Post-Silicon Validation Specialist',
+              'Hardware/Firmware Integration',
+              'SoC Debug & QAT Validation'
+            ],
+            typeSpeed: 100,
+            backSpeed: 60,
+            backDelay: 1000,
+            loop: true
+          });
+          console.log('Typed.js initialized successfully');
+        } catch (error) {
+          console.error('Failed to initialize Typed.js:', error);
+          // Fallback: add static text
+          if (targetElement) {
+            targetElement.textContent = 'System Validation Engineer';
+            targetElement.classList.add('fallback-typing');
+          }
+        }
+      } else {
+        console.warn('Target element .multiple-text not found');
+      }
+    };
+
+    // Small delay to ensure DOM is ready
+    setTimeout(initializeTyped, 500);
+
+    // Initialize ScrollReveal with proper checks
+    const initializeScrollReveal = () => {
+      try {
+        const sr = ScrollReveal();
+        
+        sr.reveal('.home', { delay: 200, origin: 'top' });
+        sr.reveal('.about', { delay: 300, origin: 'left' });
+        sr.reveal('.experience-card', { delay: 100, origin: 'bottom', interval: 200 });
+        sr.reveal('.education', { delay: 200, origin: 'right' });
+        sr.reveal('.skill-chip', { delay: 100, origin: 'bottom', interval: 100 });
+        sr.reveal('.project-card', { delay: 150, origin: 'bottom', interval: 150 });
+        sr.reveal('.recognition-item', { delay: 100, origin: 'left', interval: 100 });
+        console.log('ScrollReveal initialized successfully');
+      } catch (error) {
+        console.error('Failed to initialize ScrollReveal:', error);
+      }
+    };
+
+    setTimeout(initializeScrollReveal, 200);
 
     // Navbar scroll effects
     const navbar = document.querySelector('.navbar');
@@ -118,6 +140,11 @@ const Portfolio = () => {
 
     // Cleanup
     return () => {
+      // Destroy Typed instance
+      if (typedInstance) {
+        typedInstance.destroy();
+      }
+      
       window.removeEventListener('scroll', handleScroll);
       menuIcon?.removeEventListener('click', toggleMenu);
       document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -168,7 +195,7 @@ const Portfolio = () => {
                 <i className="bx bx-download"></i>
                 Download Resume
               </a>
-              <a href="#" className="border border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-all inline-flex items-center gap-2">
+              <a href="https://www.linkedin.com/in/arvind-singh-8ba36946/" target="_blank" rel="noopener noreferrer" className="border border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-all inline-flex items-center gap-2">
                 <i className="bx bxl-linkedin"></i>
                 LinkedIn
               </a>
@@ -212,14 +239,6 @@ const Portfolio = () => {
               </div>
               
               <div className="space-y-2">
-                <div className="text-sm text-muted-foreground">
-                  <i className="bx bx-check-circle text-success mr-2"></i>
-                  You both worked at Intel Corporation
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  <i className="bx bx-check-circle text-success mr-2"></i>
-                  You both worked at Intel Corporation from April 2022 to October 2024
-                </div>
               </div>
             </div>
           </div>
@@ -561,7 +580,7 @@ const Portfolio = () => {
                 <i className="bx bx-download"></i>
                 Download Resume
               </a>
-              <a href="#" className="border border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary-foreground hover:text-primary transition-all inline-flex items-center gap-2">
+              <a href="https://www.linkedin.com/in/arvind-singh-8ba36946/" target="_blank" rel="noopener noreferrer" className="border border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary-foreground hover:text-primary transition-all inline-flex items-center gap-2">
                 <i className="bx bxl-linkedin"></i>
                 LinkedIn
               </a>

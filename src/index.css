@@ -285,4 +285,23 @@
     0%, 50% { opacity: 1; }
     51%, 100% { opacity: 0; }
   }
+
+  /* Fallback typing animation */
+  .multiple-text {
+    min-height: 1.5em;
+    position: relative;
+  }
+
+  .multiple-text.fallback-typing::after {
+    content: 'System Validation Engineer';
+    animation: typewriter 4s infinite;
+  }
+
+  @keyframes typewriter {
+    0% { content: 'System Validation Engineer'; }
+    25% { content: 'Pre/Post-Silicon Validation Specialist'; }
+    50% { content: 'Hardware/Firmware Integration'; }
+    75% { content: 'SoC Debug & QAT Validation'; }
+    100% { content: 'System Validation Engineer'; }
+  }
 }
