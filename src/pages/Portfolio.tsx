@@ -218,29 +218,131 @@ const Portfolio = () => {
 
       {/* About Section */}
       <section id="about" className="about section-padding bg-secondary/50">
-        <div className="container-max">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">About <span className="text-primary">Me</span></h2>
+        <div className="w-full px-4 md:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">About <span className="text-primary">Me</span></h2>
           
-          <div className="max-w-4xl mx-auto">
-            <div className="professional-card p-8 mb-8">
-              <div className="flex items-center gap-2 mb-4">
-                <i className="bx bx-map text-primary"></i>
-                <span className="text-muted-foreground">Hillsboro, Oregon, United States</span>
-              </div>
-              
-              <p className="text-lg leading-relaxed mb-6">
-                Diligent Validation Engineer with 12+ years in system validation. Experienced across top-tier semiconductor companies. Strong background in computer architecture and SoC validation. Skilled in hardware/firmware integration and system-level debug. Known for thorough issue triage and cross-functional collaboration. Master's in Electrical and Computer Engineering. Seeking new opportunities in Pre/Post-Silicon Validation.
-              </p>
-              
-              <div className="bg-accent/10 border border-accent/20 rounded-lg p-4 mb-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <i className="bx bx-briefcase text-accent"></i>
-                  <span className="font-medium text-accent">Open to work</span>
+          <div className="w-full">
+            <div className="professional-card p-8 md:p-12 mb-8">
+              <div className="grid lg:grid-cols-3 gap-12">
+                
+                {/* Main Profile Section */}
+                <div className="lg:col-span-2 space-y-6">
+                  <div className="flex items-center gap-2 mb-6">
+                    <i className="bx bx-map text-primary text-xl"></i>
+                    <span className="text-muted-foreground text-lg">Hillsboro, Oregon, United States</span>
+                  </div>
+                  
+                  <p className="text-lg leading-relaxed mb-8">
+                    Diligent Validation Engineer with 12+ years in system validation across top-tier semiconductor companies. I specialize in bridging the gap between hardware and software, with deep expertise in computer architecture and SoC validation. My passion lies in solving complex technical challenges through systematic debugging, thorough issue triage, and seamless cross-functional collaboration.
+                  </p>
+                  
+                  <div className="bg-accent/10 border border-accent/20 rounded-lg p-6 mb-8">
+                    <div className="flex items-center gap-2 mb-3">
+                      <i className="bx bx-briefcase text-accent text-xl"></i>
+                      <span className="font-medium text-accent text-lg">Open to work</span>
+                    </div>
+                    <p className="text-base">Verification Validation Engineer and Validation Engineer roles</p>
+                  </div>
+
+                  {/* Core Competencies */}
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-semibold text-primary mb-4">Core Competencies</h3>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="flex items-start gap-3">
+                        <i className="bx bx-chip text-primary text-xl mt-1"></i>
+                        <div>
+                          <h4 className="font-medium">Hardware Validation</h4>
+                          <p className="text-sm text-muted-foreground">System-level validation, SoC debug, hardware integration</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <i className="bx bx-code-alt text-primary text-xl mt-1"></i>
+                        <div>
+                          <h4 className="font-medium">Test Automation</h4>
+                          <p className="text-sm text-muted-foreground">Python scripting, automated test frameworks, CI/CD</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <i className="bx bx-bug text-primary text-xl mt-1"></i>
+                        <div>
+                          <h4 className="font-medium">Debug & Triage</h4>
+                          <p className="text-sm text-muted-foreground">Root cause analysis, issue isolation, systematic debugging</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <i className="bx bx-group text-primary text-xl mt-1"></i>
+                        <div>
+                          <h4 className="font-medium">Collaboration</h4>
+                          <p className="text-sm text-muted-foreground">Cross-functional teamwork, technical leadership</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-sm">Verification Validation Engineer and Validation Engineer roles</p>
-              </div>
-              
-              <div className="space-y-2">
+
+                {/* Stats and Quick Facts */}
+                <div className="space-y-6">
+                  <div className="bg-primary/5 rounded-lg p-6 border border-primary/20">
+                    <h3 className="text-xl font-semibold mb-4">Quick Stats</h3>
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">Experience</span>
+                        <span className="font-bold text-primary">12+ Years</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">Education</span>
+                        <span className="font-bold">Master's ECE</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">Specialization</span>
+                        <span className="font-bold">System Validation</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-muted-foreground">Industry Focus</span>
+                        <span className="font-bold">Semiconductors</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Key Strengths */}
+                  <div className="bg-accent/5 rounded-lg p-6 border border-accent/20">
+                    <h3 className="text-xl font-semibold mb-4">Key Strengths</h3>
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <i className="bx bx-check-circle text-accent"></i>
+                        <span className="text-sm">Problem-solving mindset</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <i className="bx bx-check-circle text-accent"></i>
+                        <span className="text-sm">Attention to detail</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <i className="bx bx-check-circle text-accent"></i>
+                        <span className="text-sm">Technical leadership</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <i className="bx bx-check-circle text-accent"></i>
+                        <span className="text-sm">Continuous learning</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <i className="bx bx-check-circle text-accent"></i>
+                        <span className="text-sm">Quality-driven approach</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Professional Interests */}
+                  <div className="bg-secondary/30 rounded-lg p-6 border border-secondary/40">
+                    <h3 className="text-xl font-semibold mb-4">Professional Interests</h3>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">Silicon Validation</span>
+                      <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">Computer Architecture</span>
+                      <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">Test Automation</span>
+                      <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">Hardware Security</span>
+                      <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">System Debug</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
