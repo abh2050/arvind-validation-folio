@@ -53,6 +53,7 @@ const Portfolio = () => {
         sr.reveal('.skill-chip', { delay: 100, origin: 'bottom', interval: 100 });
         sr.reveal('.project-card', { delay: 150, origin: 'bottom', interval: 150 });
         sr.reveal('.recognition-item', { delay: 100, origin: 'left', interval: 100 });
+        sr.reveal('.testimonials', { delay: 200, origin: 'bottom' });
         console.log('ScrollReveal initialized successfully');
       } catch (error) {
         console.error('Failed to initialize ScrollReveal:', error);
@@ -170,6 +171,7 @@ const Portfolio = () => {
             <li><a href="#skills" className="nav-link text-foreground hover:text-primary">Skills</a></li>
             <li><a href="#projects" className="nav-link text-foreground hover:text-primary">Projects</a></li>
             <li><a href="#recognitions" className="nav-link text-foreground hover:text-primary">Recognitions</a></li>
+            <li><a href="#testimonials" className="nav-link text-foreground hover:text-primary">Testimonials</a></li>
           </ul>
 
           <div className="bx bx-menu text-2xl md:hidden cursor-pointer" id="menu-icon"></div>
@@ -567,6 +569,138 @@ const Portfolio = () => {
                 <p className="text-muted-foreground">For validating and debugging sightings for High Bandwidth Memory and RAS project</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="testimonials section-padding bg-secondary/50">
+        <div className="container-max">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Professional <span className="text-primary">Recommendations</span></h2>
+          
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Smita Kumar - Principal Engineer */}
+            <div className="professional-card p-6 hover-lift">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i className="bx bx-user text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Smita Kumar</h3>
+                  <p className="text-sm text-primary">Principal Engineer (Silicon Architect)</p>
+                  <p className="text-xs text-muted-foreground">August 25, 2025 • Senior Colleague</p>
+                </div>
+              </div>
+              <blockquote className="text-muted-foreground italic text-sm leading-relaxed">
+                "As the hardware architect of an IP, I had the pleasure of working with Arvind, who played a crucial role in validating a newly introduced and critical feature. His contributions were exceptional—Arvind's keen attention to detail helped uncover subtle corner cases, ensuring a robust and reliable implementation. What impressed me most was his eagerness to learn and grow. Whether it was navigating complex specifications or actively seeking feedback, Arvind approached every challenge with curiosity and a growth mindset that elevated the entire team's performance."
+              </blockquote>
+              <div className="flex items-center gap-1 mt-4">
+                {[...Array(5)].map((_, i) => (
+                  <i key={i} className="bx bxs-star text-warning text-sm"></i>
+                ))}
+              </div>
+            </div>
+
+            {/* Shane Anderson - System Validation Engineer */}
+            <div className="professional-card p-6 hover-lift">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i className="bx bx-user text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Shane Anderson</h3>
+                  <p className="text-sm text-primary">System Validation Software Engineer at Intel</p>
+                  <p className="text-xs text-muted-foreground">July 2, 2025 • Mentor & Senior Colleague</p>
+                </div>
+              </div>
+              <blockquote className="text-muted-foreground italic text-sm leading-relaxed">
+                "I've had the pleasure of training, mentoring, and working alongside Arvind for over three years now. From day 1, he demonstrated a true passion for learning and succeeding. When it comes to debugging and validation, Arvind leaves no stone unturned. If there's a bug in the product, he will find it. This attention to detail, and commitment to quality is one of his greatest assets. He is the type of person that has made a lasting impact on not just my time at Intel, but in my entire professional career."
+              </blockquote>
+              <div className="flex items-center gap-1 mt-4">
+                {[...Array(5)].map((_, i) => (
+                  <i key={i} className="bx bxs-star text-warning text-sm"></i>
+                ))}
+              </div>
+            </div>
+
+            {/* Siddharth Bisoi - Ex-Intel */}
+            <div className="professional-card p-6 hover-lift">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i className="bx bx-user text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Siddharth Bisoi</h3>
+                  <p className="text-sm text-primary">5G RAN | SAMSUNG | Ex-Intel | Ex-Nokia</p>
+                  <p className="text-xs text-muted-foreground">Former Manager at L&T Technology</p>
+                </div>
+              </div>
+              <blockquote className="text-muted-foreground italic text-sm leading-relaxed">
+                "Arvind is not just a terrific and precise validation engineer but also an inspiring person. He consistently demonstrated a strong work ethic at L&T technology and provided outstanding results for the company. He is ready to deal with difficult situations and solve problems on time. He is detail oriented team player. The success achieved in his job required extensive knowledge and dedication. Experiencing his fast and creative mind at the office is most remarkable."
+              </blockquote>
+              <div className="flex items-center gap-1 mt-4">
+                {[...Array(5)].map((_, i) => (
+                  <i key={i} className="bx bxs-star text-warning text-sm"></i>
+                ))}
+              </div>
+            </div>
+
+            {/* Roshan Joshi - Radisys Corp */}
+            <div className="professional-card p-6 hover-lift">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i className="bx bx-user text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Roshan Joshi</h3>
+                  <p className="text-sm text-primary">Sales Engineer @ Radisys Corp</p>
+                  <p className="text-xs text-muted-foreground">Former Manager at Airspan Networks</p>
+                </div>
+              </div>
+              <blockquote className="text-muted-foreground italic text-sm leading-relaxed">
+                "I had an opportunity to manage Arvind when he was in Airspan Networks. He is an absolute pleasure to work with, he always brings an upbeat attitude to his work. I remember him as someone with a serious working attitude and not afraid of hard work. Any team would love to have Arvind as its member!"
+              </blockquote>
+              <div className="flex items-center gap-1 mt-4">
+                {[...Array(5)].map((_, i) => (
+                  <i key={i} className="bx bxs-star text-warning text-sm"></i>
+                ))}
+              </div>
+            </div>
+
+            {/* Ehsan Moghaddam - PSU Colleague */}
+            <div className="professional-card p-6 hover-lift lg:col-span-2">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <i className="bx bx-user text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg">Ehsan Moghaddam</h3>
+                  <p className="text-sm text-primary">Graduate Student</p>
+                  <p className="text-xs text-muted-foreground">Portland State University Colleague</p>
+                </div>
+              </div>
+              <blockquote className="text-muted-foreground italic text-sm leading-relaxed">
+                "I had the opportunity to work with Arvind in formal verification course at Portland State University. He was a great partner to work with on complex lab projects. It was very easy to communicate ideas, work on problems, and collaborate with Arvind. He also has great time management skills along with clear goal orientation. I would highly recommend Arvind for all talent seeking industries."
+              </blockquote>
+              <div className="flex items-center gap-1 mt-4">
+                {[...Array(5)].map((_, i) => (
+                  <i key={i} className="bx bxs-star text-warning text-sm"></i>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* LinkedIn CTA */}
+          <div className="text-center mt-12">
+            <div className="inline-flex items-center gap-2 text-muted-foreground text-sm mb-4">
+              <i className="bx bxl-linkedin text-primary"></i>
+              <span>View more recommendations on LinkedIn</span>
+            </div>
+            <br />
+            <a href="https://www.linkedin.com/in/arvind-singh-8ba36946/" target="_blank" rel="noopener noreferrer" className="btn-gradient px-6 py-3 rounded-lg font-medium inline-flex items-center gap-2">
+              <i className="bx bxl-linkedin"></i>
+              Visit LinkedIn Profile
+            </a>
           </div>
         </div>
       </section>
